@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, form {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add background color and text color */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Center align the content */
+        h1 {
+            text-align: center;
+        }
+
+        /* Style the menu items */
+        .menu-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .menu-item button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Style the shopping cart */
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #cart-list {
+            list-style: none;
+        }
+
+        #cart-list li {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        /* Style the checkout button */
+        button {
+            display: block;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Style the checkout page */
+        #checkout-page {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #checkout-page h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #checkout-page label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #checkout-page input[type="text"],
+        #checkout-page input[type="email"],
+        #checkout-page select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #checkout-page button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>South Indian</h2>
+    
+    <!-- Menu Items -->
+    <div class="menu-item">
+        <h2>Idli chutney sambar</h2>
+        <p>Price: ₹40</p>
+        <button onclick="addToCart('Idli chutney sambar', 40.00)">Add to Cart</button>
+    </div>
+
+  <!-- Menu Items -->
+ <div class="menu-item">
+    <h2>Medu wada chutney sambar</h2>
+    <p>Price: ₹50</p>
+    <button onclick="addToCart('Medu wada chutney sambar', 50.00)">Add to Cart</button>
+</div>
+
+    <!-- Menu Items -->
+    <div class="menu-item">
+        <h2>Poda Idli</h2>
+        <p>Price: ₹45</p>
+        <button onclick="addToCart('Poda Idli', 45.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Appe</h2>
+        <p>Price: ₹50</p>
+        <button onclick="addToCart('Appe', 50.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Idli fry</h2>
+        <p>Price: ₹50</p>
+        <button onclick="addToCart('Idli fry', 50.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Dosa</h2>
+        <p>Price: ₹70</p>
+        <button onclick="addToCart('Dosa', 70.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Masala Dosa</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Masala Dosa', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Set Dosa</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Masala Dosa', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Neer Dosa-Gravy</h2>
+        <p>Price: ₹100</p>
+        <button onclick="addToCart('Neer Dosa-Gravy', 100.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Onion Uttapam</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Onion Uttapam', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Padi Uttapam</h2>
+        <p>Price: ₹90</p>
+        <button onclick="addToCart('Padi Uttapam', 90.00)">Add to Cart</button>
+    </div>
+
+    <h2>Parathas</h2>
+
+    <div class="menu-item">
+        <h2>Aloo Methi</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Aloo Methi', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Aloo Pudina</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Aloo Pudina', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Cabbage</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Cabbage', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Mix Veg</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('mix Veg', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Paneer</h2>
+        <p>Price: ₹90</p>
+        <button onclick="addToCart('Paneer', 90.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Cheese Onion</h2>
+        <p>Price: ₹100</p>
+        <button onclick="addToCart('Cheese Onion', 100.00)">Add to Cart</button>
+    </div>
+
+    <h2>Pav bhagi</h2>
+
+    <div class="menu-item">
+        <h2>Pav Bhagi</h2>
+        <p>Price: ₹100</p>
+        <button onclick="addToCart('Pav Bhagi', 100.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Cheese Pav Bhagi</h2>
+        <p>Price: ₹120</p>
+        <button onclick="addToCart('Cheese Pav Bhagi', 120.00)">Add to Cart</button>
+    </div>
+    
+    <h2>Rice</h2>
+
+    <div class="menu-item">
+        <h2>Tawa pulao</h2>
+        <p>Price: ₹150</p>
+        <button onclick="addToCart('Tawa pulao', 150.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Mix veg pulao</h2>
+        <p>Price: ₹130</p>
+        <button onclick="addToCart('Mix veg pulao', 130.00)">Add to Cart</button>
+    </div>
+
+    <h2>Meals</h2>
+
+    <div class="menu-item">
+        <h2>Chole Bhature</h2>
+        <p>Price: ₹120</p>
+        <button onclick="addToCart('Chole Bhature', 120.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Parantha Bhagi</h2>
+        <p>Price: ₹120</p>
+        <button onclick="addToCart('Parantha Bhagi', 120.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Poori Bhagi</h2>
+        <p>Price: ₹80</p>
+        <button onclick="addToCart('Poori Bhagi', 80.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Masala Bread crumps</h2>
+        <p>Price: ₹100</p>
+        <button onclick="addToCart('Masala Bread crumps', 100.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Pav sliders</h2>
+        <p>Price: ₹110</p>
+        <button onclick="addToCart('Pav sliders', 110.00)">Add to Cart</button>
+    </div>
+
+    <h2>Drinks</h2>
+
+    <div class="menu-item">
+        <h2>Ice Tea</h2>
+        <p>Price: ₹20</p>
+        <button onclick="addToCart('Ice Tea', 20.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Kokum</h2>
+        <p>Price: ₹20</p>
+        <button onclick="addToCart('Kokum', 20.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Nimbu Pani</h2>
+        <p>Price: ₹20</p>
+        <button onclick="addToCart('Nimbu Pani', 20.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h2>Coconut Water</h2>
+        <p>Price: ₹30</p>
+        <button onclick="addToCart('Coconut Water', 30.00)">Add to Cart</button>
+    </div>
+
+    <!-- Shopping Cart -->
+    <h2>Shopping Cart</h2>
+    <ul id="cart-list">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+    
+    <!-- Checkout Button -->
+    <button onclick="checkout()">Checkout</button>
+
+    <!-- Checkout Page (Placeholder) -->
+    <div id="checkout-page" style="display: none;">
+        <h2>Checkout</h2>
+        <form onsubmit="return placeOrder()">
+            <!-- Add form fields for customer information and payment -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required><br><br>
+
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+            </select><br><br>
+
+            <!-- Add more fields as needed for payment info -->
+            
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <!-- Success Message Page (Hidden by default) -->
+    <div id="success-page" style="display: none;">
+        <h2>Thank You for Ordering!</h2>
+        <p>Your delicious meal is on the way. We hope you enjoy it!</p>
+        <p>Estimated Delivery Time: 30 minutes</p>
+    </div>
+
+    <script>
+        // JavaScript functions for cart, checkout, and order placement
+        const cart = [];
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-list');
+            cartList.innerHTML = '';
+            
+            let totalPrice = 0;
+            for (const item of cart) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - ₹${item.price}`;
+                cartList.appendChild(listItem);
+                totalPrice += item.price;
+            }
+            
+            // Update total price
+            const totalElement = document.createElement('li');
+            totalElement.textContent = `Total: ₹${totalPrice.toFixed(2)}`;
+            cartList.appendChild(totalElement);
+        }
+
+        function checkout() {
+            const checkoutPage = document.getElementById('checkout-page');
+            checkoutPage.style.display = 'block';
+        }
+
+        function placeOrder() {
+            // Place order logic goes here
+            // You can add additional code for order processing
+            // For now, simply show the success message
+            const successPage = document.getElementById('success-page');
+            const checkoutPage = document.getElementById('checkout-page');
+            checkoutPage.style.display = 'none';
+            successPage.style.display = 'block';
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

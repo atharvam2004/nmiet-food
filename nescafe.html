@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, form {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add background color and text color */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Center align the content */
+        h1 {
+            text-align: center;
+        }
+
+        /* Style the menu items */
+        .menu-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .menu-item button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Style the shopping cart */
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #cart-list {
+            list-style: none;
+        }
+
+        #cart-list li {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        /* Style the checkout button */
+        button {
+            display: block;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Style the checkout page */
+        #checkout-page {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #checkout-page h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #checkout-page label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #checkout-page input[type="text"],
+        #checkout-page input[type="email"],
+        #checkout-page select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #checkout-page button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Restaurant Menu</h1>
+    
+    <!-- Menu Items -->
+    <h1>Beverages</h1>
+    
+    <div class="menu-item">
+        <h5>Espresso</h5>
+        <h5>Americano</h5>
+        <h5>Cappuccino</h5>
+        <h5>Cafe Mocha</h5>
+        <h5>Hot Chocolate</h5>
+        
+        
+        
+        <centre><p>Price: ₹40.00</p></centre> 
+        <button onclick="addToCart('Beverages', 40.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h1>Coolers</h1>
+        
+        <h5>Lemon Ice Tea</h5>
+        <h5>Special Masala Mojito</h5>
+        <h5>Water Melon</h5>
+        <p>Price: ₹50.00</p>
+        <button onclick="addToCart('Coolers', 50.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h1>Maggie</h1>
+        
+        <h5>Original Maggie</h5>
+        <h5>Chille Maggie</h5>
+        <h5>Vegetable Maggie</h5>
+        <h5>Vegetable Maggie</h5>
+        <h5>Haldi Maggie</h5>
+        <p>Price: ₹50.00</p>
+        <button onclick="addToCart('Maggie', 50.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h1>Sweet Corn</h1>
+        
+        <h5>Classic chinese</h5>
+        <h5>Masala-ae-magic</h5>
+        <h5>Chili Garlic</h5>
+        <h5>Biryani Masala</h5>
+        <h5>Sweet Corn</h5>
+        <p>Price: ₹60.00</p>
+        <button onclick="addToCart('Sweet Corn', 50.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h1>Hot Cup Soup</h1>
+        
+        <h5>Tomato Soup</h5>
+        <h5>Manchow Soup</h5>
+        
+        <p>Price: ₹60.00</p>
+        <button onclick="addToCart('Hot Cup Soup', 50.00)">Add to Cart</button>
+    </div>
+
+    <div class="menu-item">
+        <h1>Passta</h1>
+        
+        <h5>Oregano Passta</h5>
+        <h5>Tomato Passta</h5>
+        <h5>Masala Passta</h5>
+        <p>Price: ₹60.00</p>
+        <button onclick="addToCart('Passta', 50.00)">Add to Cart</button>
+    </div>
+
+    <!-- Shopping Cart -->
+    <h2>Shopping Cart</h2>
+    <ul id="cart-list">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+    
+    <!-- Checkout Button -->
+    <button onclick="checkout()">Checkout</button>
+
+   
+    <div id="checkout-page" style="display: none;">
+        <h2>Checkout</h2>
+        <form onsubmit="return placeOrder()">
+            <!-- Add form fields for customer information and payment -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required><br><br>
+
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+            </select><br><br>
+
+            <!-- Add more fields as needed for payment info -->
+            
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <!-- Success Message Page (Hidden by default) -->
+    <div id="success-page" style="display: none;">
+        <h2>Thank You for Ordering!</h2>
+        <p>Your delicious meal is on the way. We hope you enjoy it!</p>
+        <p>Estimated Delivery Time: 30 minutes</p>
+    </div>
+
+    <script>
+        // JavaScript functions for cart, checkout, and order placement
+        const cart = [];
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-list');
+            cartList.innerHTML = '';
+            
+            let totalPrice = 0;
+            for (const item of cart) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - ₹${item.price}`;
+                cartList.appendChild(listItem);
+                totalPrice += item.price;
+            }
+            
+            // Update total price
+            const totalElement = document.createElement('li');
+            totalElement.textContent = `Total: ₹${totalPrice.toFixed(2)}`;
+            cartList.appendChild(totalElement);
+        }
+
+        function checkout() {
+            const checkoutPage = document.getElementById('checkout-page');
+            checkoutPage.style.display = 'block';
+        }
+
+        function placeOrder() {
+            // Place order logic goes here
+            // You can add additional code for order processing
+            // For now, simply show the success message
+            const successPage = document.getElementById('success-page');
+            const checkoutPage = document.getElementById('checkout-page');
+            checkoutPage.style.display = 'none';
+            successPage.style.display = 'block';
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

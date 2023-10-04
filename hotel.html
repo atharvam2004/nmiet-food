@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Homepage</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .cardlayout1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("shop1.jpg");
+
+        height: 220px;
+        width: 100%;
+        border: 1px solid black;
+        color: whitesmoke;
+        margin: 3%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .text-box {
+        display: flex;
+        height: 12rem;
+        width: 23.4rem;
+        opacity: 0%;
+        border: 1px solid white;
+        justify-content: center;
+      }
+
+      .cardlayout1:hover > .text-box {
+        display: flex;
+        height: 7.8rem;
+        width: 21.6rem;
+        opacity: 100%;
+        border: 1px solid white;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 700ms;
+      }
+
+      .program-titles {
+        background: rgba(0, 0, 0, 0.527);
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+        transform: translateY(80px);
+        height: 40px;
+      }
+
+      .cardlayout1:hover > .program-titles {
+        background: rgba(0, 0, 0, 0.329);
+        width: 100%;
+        text-align: center;
+        transition-duration: 700ms;
+        transform: translateY(-1px);
+      }
+
+      .cardlayout1:hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("shop1.jpg");
+
+        height: 220px;
+        width: 100%;
+        border: 1px solid black;
+        color: whitesmoke;
+        box-shadow: 1px 1px 10px 3px rgb(113, 178, 252);
+        transition-duration: 700ms;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .cardlayout2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("shop2.jpg");
+
+        height: 220px;
+        width: 100%;
+        border: 1px solid black;
+        color: whitesmoke;
+        margin: 3%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .cardlayout2:hover > .program-titles {
+        background: rgba(0, 0, 0, 0.329);
+        width: 100%;
+        text-align: center;
+        transition-duration: 700ms;
+        transform: translateY(-1px);
+      }
+
+      .cardlayout2:hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("shop2.jpg");
+        height: 220px;
+        width: 100%;
+        border: 1px solid black;
+        color: whitesmoke;
+        box-shadow: 1px 1px 10px 3px rgb(113, 178, 252);
+        transition-duration: 700ms;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .cardlayout2:hover > .text-box {
+        display: flex;
+        height: 7.8rem;
+        width: 21.6rem;
+        opacity: 100%;
+        border: 1px solid white;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 700ms;
+      }
+
+      .cardlayout3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url("shop3.jpg");
+        height: 220px;
+        width: 100%;
+        border: 1px solid black;
+        color: whitesmoke;
+        margin: 3%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .cardlayout3:hover > .program-titles {
+        background: rgba(0, 0, 0, 0.329);
+        width: 100%;
+        text-align: center;
+        transition-duration: 700ms;
+        transform: translateY(-1px);
+      }
+
+      .cardlayout3:hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("shop3.jpg");
+        height: 220px;
+        width: 100%;
+        border: 1px solid black;
+        color: #fff;
+        box-shadow: 1px 1px 10px 3px rgb(113, 178, 252);
+        transition-duration: 700ms;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .cardlayout3:hover > .text-box {
+        display: flex;
+        height: 7.8rem;
+        width: 21.6rem;
+        opacity: 100%;
+        border: 1px solid white;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 700ms;
+      }
+      .invis {
+        color: #fff;
+      }
+      .cardlayout3:hover > .ttvd {
+        background-color: black;
+        margin-top: 30% !important;
+        text-decoration: none !important;
+      }
+      .ttvd {
+        /* background-color: rgb(73, 73, 73); */
+        margin-top: 1% !important;
+        text-decoration: none !important;
+        color: #fff;
+      }
+      .nav {
+        width: 80%;
+        margin: auto;
+      }
+      @media (max-width: 768px) {
+        .nav {
+          width: 100%;
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="nmiet.jpg" class="nav" alt="alternative-text" />
+
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <div class="cardlayout2">
+              <h3 class="program-titles">Golden Samosa</h3>
+              <div class="text-box">
+                <a href="goldsamosa.html" class="ttvd"> Tap to view menu </a>
+              </div>
+            </div>
+          </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="cardlayout3">
+              <h3 class="program-titles">Golden Samosa II</h3>
+              <div class="text-box">
+                <a href="goldensamosa.html" class="ttvd"> Tap to view menu </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <div class="cardlayout1">
+              <h3 class="program-titles">Nescafe</h3>
+              <div class="text-box">
+                <a href="nescafe.html" class="ttvd"> Tap to view menu </a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
